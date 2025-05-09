@@ -157,6 +157,10 @@ func restoreExtensions(jsonPath string, tempDir string, progressBar *utils.Progr
 			fmt.Println("Erro ao instalar extensão:", err)
 		}
 
+		cmdEnable := exec.Command("gnome-extensions", "enable", ext.UUID)
+		cmdEnable.Stdout = os.Stdout
+		cmdEnable.Stderr = os.Stderr
+
 		progressBar.SetProgress(i + 1)
 	}
 

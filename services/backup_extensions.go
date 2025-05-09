@@ -70,9 +70,7 @@ func NewBackupExtensions(outputPath string) error {
 	}
 
 	jsonFile := "backup_extensions.json"
-	if outputPath != "" {
-		jsonFile = outputPath + "_extensions.json"
-	}
+	defer os.Remove(jsonFile)
 
 	err = os.WriteFile(jsonFile, jsonData, 0644)
 	if err != nil {
@@ -84,9 +82,7 @@ func NewBackupExtensions(outputPath string) error {
 
 	progressBar.SetMessage("Backing up extension settings")
 	dconfFile := "extensions_dconf_backup.txt"
-	if outputPath != "" {
-		dconfFile = outputPath + "_dconf_backup.txt"
-	}
+	defer os.Remove(dconfFile)
 
 	var dconfBuffer bytes.Buffer
 	dconfCmd := exec.Command("dconf", "dump", "/org/gnome/shell/extensions/")
