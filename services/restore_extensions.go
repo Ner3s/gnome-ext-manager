@@ -22,7 +22,7 @@ func unzip(src, dest string, progressBar *utils.ProgressBar) error {
 	defer r.Close()
 
 	// Set total for progress bar
-	fileCount := len(r.File)
+	// fileCount := len(r.File)
 	progressBar.SetMessage("Extracting files")
 
 	for i, f := range r.File {
@@ -88,7 +88,7 @@ func restoreExtensions(jsonPath string, tempDir string, progressBar *utils.Progr
 	// Set total for progress bar
 	progressBar.SetMessage("Installing extensions")
 	progressBar.SetProgress(0)
-	progressBar.total = len(extensions)
+	// progressBar.total = len(extensions)
 
 	for i, ext := range extensions {
 		resp, err := http.Get(ext.URL)
@@ -111,13 +111,13 @@ func restoreExtensions(jsonPath string, tempDir string, progressBar *utils.Progr
 
 		// encontrar pk na shell_version_map
 		shellMap := apiData["shell_version_map"].(map[string]interface{})
-		var pk float64
-		if val, ok := shellMap[gnomeVersion]; ok {
-			pk = val.(map[string]interface{})["pk"].(float64)
-		} else {
-			fmt.Println("Versão", gnomeVersion, "não encontrada para extensão", ext.UUID)
-			continue
-		}
+		// var pk float64
+		// if val, ok := shellMap[gnomeVersion]; ok {
+		// 	pk = val.(map[string]interface{})["pk"].(float64)
+		// } else {
+		// 	fmt.Println("Versão", gnomeVersion, "não encontrada para extensão", ext.UUID)
+		// 	continue
+		// }
 
 		versionNum := int(shellMap[gnomeVersion].(map[string]interface{})["version"].(float64))
 
