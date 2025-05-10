@@ -20,11 +20,12 @@ A command-line tool for backup and restoration of GNOME Shell extensions.
 
 ## Installation
 
-Clone this repository and build the application:
+Download the latest release, make it executable, and install it:
 
 ```bash
-curl -L https://github.com/ner3s/gnome-ext-manager/releases/latest/download/gnome-ext-manager -o /usr/local/bin/gnome-ext-manager
-chmod +x /usr/local/bin/gnome-ext-manager
+curl -L https://github.com/ner3s/gnome-ext-manager/releases/latest/download/gnome-ext-manager -o ~/gnome-ext-manager
+chmod +x ~/gnome-ext-manager
+sudo mv ~/gnome-ext-manager /usr/local/bin/
 ```
 
 ## Usage

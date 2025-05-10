@@ -20,11 +20,12 @@ Uma ferramenta de linha de comando para backup e restauração de extensões do 
 
 ## Instalação
 
-Clone este repositório e construa a aplicação:
+Baixe a versão mais recente, torne-a executável e instale-a:
 
 ```bash
-curl -L https://github.com/ner3s/gnome-ext-manager/releases/latest/download/gnome-ext-manager -o /usr/local/bin/gnome-ext-manager
-chmod +x /usr/local/bin/gnome-ext-manager
+curl -L https://github.com/ner3s/gnome-ext-manager/releases/latest/download/gnome-ext-manager -o ~/gnome-ext-manager
+chmod +x ~/gnome-ext-manager
+sudo mv ~/gnome-ext-manager /usr/local/bin/
 ```
 
 ## Uso
